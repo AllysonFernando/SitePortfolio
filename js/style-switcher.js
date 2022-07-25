@@ -39,3 +39,50 @@ window.addEventListener("load", () => {
     dayNight.querySelector("i").classList.add("fa-moon");
   }
 });
+
+//Top Button
+function toTop() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY === 0) {
+    document.querySelector(".top-button").classList.add("hidden");
+  } else {
+    document.querySelector(".top-button").classList.remove("hidden");
+  }
+});
+
+//Active aside
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY <= 1008) {
+    document.querySelector(".aside-home").classList.add("active");
+  } else {
+    document.querySelector(".aside-home").classList.remove("active");
+  }
+  if (window.scrollY >= 1009 && window.scrollY <= 2667) {
+    document.querySelector(".aside-about").classList.add("active");
+  } else {
+    document.querySelector(".aside-about").classList.remove("active");
+  }
+  if (window.scrollY >= 2668 && window.scrollY <= 3676) {
+    document.querySelector(".aside-service").classList.add("active");
+  } else {
+    document.querySelector(".aside-service").classList.remove("active");
+  }
+  if (window.scrollY >= 3677 && window.scrollY <= 4685) {
+    document.querySelector(".aside-portfolio").classList.add("active");
+  } else {
+    document.querySelector(".aside-portfolio").classList.remove("active");
+  }
+  if (window.scrollY >= 4686) {
+    document.querySelector(".aside-contact").classList.add("active");
+  } else {
+    document.querySelector(".aside-contact").classList.remove("active");
+  }
+});
